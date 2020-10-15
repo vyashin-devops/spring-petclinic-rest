@@ -31,5 +31,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: pet-clinic
         environment_name: PetClinic-env
+        version_label: ${{github.SHA}}
         region: us-east-1
         deployment_package: deploy.zip
