@@ -22,3 +22,14 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*'
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v13
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: pet-clinic
+        environment_name: PetClinic-env
+        region: us-east-1
+        deployment_package: deploy.zip
