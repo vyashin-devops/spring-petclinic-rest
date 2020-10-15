@@ -22,8 +22,6 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v13
       with:
@@ -33,4 +31,4 @@ jobs:
         environment_name: PetClinic-env
         version_label: ${{github.SHA}}
         region: us-east-1
-        deployment_package: deploy.zip
+        deployment_package: target/spring-petclinic-rest-2.2.5.jar
