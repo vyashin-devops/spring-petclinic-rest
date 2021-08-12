@@ -1,35 +1,33 @@
 name: Java CI with Maven
- 
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
- 
+
 jobs:
   build:
- 
+
     runs-on: ubuntu-latest
- 
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Test
+      run: mvn test -Punit-test
     - name: Build
-      run: mvn -B package --file pom.xml
-      
-    - name: Generate deployment package
-      run: zip -r deploy.zip spring-petclinic-rest-2.2.5.jar
-      
+      run: mvn -B package --file pom.xml -DskipTests
     - name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v16
+      uses: einaregilsson/beanstalk-deploy@v13
       with:
         aws_access_key: ${{ secrets.MY_AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.MY_AWS_SECRET_KEY }}
         application_name: springbootdemo
         environment_name: Springbootdemo-env-1
         version_label: ${{github.SHA}}
-        region: eu-central-1
-        deployment_package: deploy.zip
+        region: us-east-1
+        deployment_package: target/spring-petclinic-rest-2.2.5.jar
