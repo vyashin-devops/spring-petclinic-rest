@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Build
+      run: mvn -B package --file pom.xml
     - name: Generate deployment package
       run: zip  -j app-0.0.1-SNAPSHOT.jar.zip app-0.0.1-SNAPSHOT.jar
       
@@ -26,7 +28,7 @@ jobs:
         aws_access_key: ${{ secrets.MY_AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.MY_AWS_SECRET_KEY }}
         application_name: springbootdemo
-        environment_name: springbootdemo-env
+        environment_name: Springbootdemo-env-1
         version_label: ${{github.SHA}}
         region: eu-central-1
         deployment_package: app-0.0.1-SNAPSHOT.jar
