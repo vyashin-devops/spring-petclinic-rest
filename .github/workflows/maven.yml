@@ -1,8 +1,4 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-# ver.5
-
-name: Java CI with Maven
+name:  Java CI with Maven
  
 on:
   push:
@@ -21,15 +17,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build
-      run: mvn -B package --file pom.xml
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*'
+      
     - name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v13
+      uses: einaregilsson/beanstalk-deploy@v16
       with:
         aws_access_key: ${{ secrets.MY_AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.MY_AWS_SECRET_KEY }}
-        application_name: pet-clinic
-        environment_name: Petclinic-env
+        application_name: springbootdemo
+        environment_name: springbootdemo-env
         version_label: ${{github.SHA}}
         region: eu-central-1
-        #deployment_package: target/spring-petclinic-rest-2.2.5.jar
+        deployment_package: deploy.zip
