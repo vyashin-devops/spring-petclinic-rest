@@ -30,4 +30,4 @@ jobs:
         environment_name: Springbootdemo-env-1
         version_label: ${{github.SHA}}
         region: eu-central-1
-        deployment_package: target/spring-petclinic-rest-2.2.5.jar
+        deployment_package: target/spring-petclinic-rest-2.4.2.jar
