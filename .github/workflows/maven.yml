@@ -26,8 +26,8 @@ jobs:
       with:
         aws_access_key: ${{ secrets.MY_AWS_ACCESS_KEY }}
         aws_secret_key: ${{ secrets.MY_AWS_SECRET_KEY }}
-        application_name: springbootdemo
-        environment_name: Springbootdemo-env-1
+        application_name: petclinic
+        environment_name: Petclinic-env
         version_label: ${{github.SHA}}
         region: eu-central-1
         deployment_package: target/spring-petclinic-rest-2.4.2.jar
