@@ -11,7 +11,7 @@ The [spring-petclinic-angular project](https://github.com/spring-petclinic/sprin
 
 ![alt petclinic-ermodel](petclinic-ermodel.png)
 
-## Running petclinic locally
+##  Running petclinic locally
 
 ### With maven command line
 ```
