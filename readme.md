@@ -1,4 +1,11 @@
-# REST version of Spring PetClinic Sample Application (spring-framework-petclinic extend ) [![Build Status](https://travis-ci.org/spring-petclinic/spring-petclinic-rest.png?branch=master)](https://travis-ci.org/spring-petclinic/spring-petclinic-rest/)
+## Petclinic web application
+GitHub Action Workflow to build and push Petclinic web application to AWS Elastic Beanstalk<br><br>
+Status of Last Deployment:<br></br>
+<img src="https://github.com/vyashin-devops/spring-petclinic-rest/workflows/Java CI with Maven/badge.svg?branch=main"> ![](https://img.shields.io/badge/vyashin-spring-petclinic-rest-brightgreen)<br><br>
+Copyleft by Vyacheslav Yashin 2021
+***
+<br><br>
+## REST version of Spring PetClinic Sample Application (spring-framework-petclinic extend ) [![Build Status](https://travis-ci.org/spring-petclinic/spring-petclinic-rest.png?branch=master)](https://travis-ci.org/spring-petclinic/spring-petclinic-rest/)
 
 This backend version of the Spring Petclinic application only provides a REST API. **There is no UI**.
 The [spring-petclinic-angular project](https://github.com/spring-petclinic/spring-petclinic-angular) is a Angular front-end application which consumes the REST API.
