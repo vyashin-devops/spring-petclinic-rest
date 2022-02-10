@@ -1,7 +1,7 @@
 ## Petclinic web application
 GitHub Action Workflow to build and push Petclinic web application to AWS Elastic Beanstalk<br><br>
 Status of Last Deployment:<br></br>
-<img src="https://github.com/vyashin-devops/spring-petclinic-rest/workflows/Java CI with Maven/badge.svg?branch=main"> 
+<img src="https://github.com/vyashin-devops/spring-petclinic-rest/workflows/Java CI with Maven/badge.svg?branch=_main">
 ![](https://img.shields.io/badge/vyashin-spring-petclinic-rest-brightgreen)<br><br>
 Copyleft by Vyacheslav Yashin 2021
 ***
